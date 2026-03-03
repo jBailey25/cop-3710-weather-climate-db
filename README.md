@@ -23,4 +23,38 @@ This project designa a relational Weather and Climate Analytics databse to store
 
 The schema models stations, weather variables, and observations, including a weak entity (Sensor) and an associative entity (Observation). 
 
+# Final Normalized ER / Relational Schema (BCNF)
 
+## DATASET
+- Dataset_ID (PK)
+- Source_name
+
+## STATION
+- Station_ID (PK)
+- Dataset_ID (FK → DATASET.Dataset_ID)
+- Name
+- Latitude
+- Longitude
+- Elevation
+
+## STATION_PROFILE
+- Station_ID (PK, FK → STATION.Station_ID)
+- Status
+
+## SENSOR
+- Station_ID (PK, FK → STATION.Station_ID)
+- Sensor_Number (PK)
+- Sensor_Type
+- Install_Date
+
+## WEATHER_VARIABLE
+- Variable_Code (PK)
+- Variable_Name
+- Unit
+
+## OBSERVATION
+- Observation_ID (PK)
+- Station_ID (FK → STATION.Station_ID)
+- Variable_Code (FK → WEATHER_VARIABLE.Variable_Code)
+- Value
+- Observed_At
