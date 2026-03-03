@@ -43,8 +43,8 @@ The schema models stations, weather variables, and observations, including a wea
 
 ## SENSOR
 - Station_ID (PK, FK → STATION.Station_ID)
-- Sensor_Number (PK)
-- Sensor_Type
+- Sen_Num (PK)
+- Sen_Type
 - Install_Date
 
 ## WEATHER_VARIABLE
