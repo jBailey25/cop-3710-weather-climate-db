@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 # load the file
 df = pd.read_csv('4274851.csv')
@@ -17,3 +16,21 @@ vars_data = [
     {'VAR_CODE': 'TMAX', 'VAR_NAME': 'Max Temp'},
     {'VAR_CODE': 'TMIN', 'VAR_NAME': 'Min Temp'}
 ]
+
+for i in range(5, 101):
+    vars_data.append({"VAR_CODE": f"V{i:03d}", "VAR_NAME": f"Sensor_{i}"})
+
+pd.DataFrame(vars_data).to_csv("data/variables.csv", index=False)
+
+# OBSERVATION table
+obs = df.melt(
+    id_vars=["STATION", "DATE"],
+    value_vars=["PRCP", "SNWD", "TMAX", "TMIN"],
+    var_name="VAR_CODE",
+    value_name="VALUE"
+).dropna(subset=["VALUE"])
+
+obs.rename(columns={"STATION": "STATION_ID", "DATE": "OBS_DATE"}, inplace=True)
+obs.to_csv("data/observations.csv", index=True, index_label="OBS_ID")
+
+print(f"Created CSVs: {len(stations)} Stations, {len(obs)} Observations.")
