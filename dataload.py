@@ -2,12 +2,12 @@ import oracledb
 import pandas as pd
 
 oracledb.init_oracle_client(
-    lib_dir="/Users/justineb/instantclient-basic-macos.arm64-23.3.0.23.09-2 2"
+    lib_dir="insta_client_path"
 )
 
 conn = oracledb.connect(
-    user="JBAILEY6814_SCHEMA_CQK42",
-    password="MyPassword",
+    user="USER",
+    password="PASSWORD",
     dsn="db.freesql.com:1521/23ai_34ui2"
 )
 
