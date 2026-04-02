@@ -19,42 +19,24 @@ This database supports weather and climate data analysis, stores weather data, a
 The database will use publicly available weather and climate datasets
 
 ## Update - Database Application (Part B) :
-This project designa a relational Weather and Climate Analytics databse to store and analyse daily weather observations by station and date. A subset of NOAA GHCHN-D (Global Historical Climatology Network - Daily) data from 02/02/2026 to 02/07/2026 for Orlando, FL and Denver, CO is used as the data source. 
+This project designa a relational Weather and Climate Analytics databse to store and analyse daily weather observations by station and date. A subset of NOAA GHCHN-D (Global Historical Climatology Network - Daily) data from 01/01/2026 to 01/07/2026. It uses real-world observations from 3,625 unique weather stations across 10 different U.S. states. 
 
-The schema models stations, weather variables, and observations, including a weak entity (Sensor) and an associative entity (Observation). 
+The schema models weather stations, weather variables, and observations.
 
-# Final Normalized ER / Relational Schema (BCNF)
-
-## DATASET
-- Dataset_ID (PK)
-- Source_name
+# Final (UPDATED) Normalized ER / Relational Schema (BCNF)
 
 ## STATION
-- Station_ID (PK)
-- Dataset_ID (FK → DATASET.Dataset_ID)
-- Name
-- Latitude
-- Longitude
-- Elevation
-
-## STATION_PROFILE
-- Station_ID (PK, FK → STATION.Station_ID)
-- Status
-
-## SENSOR
-- Station_ID (PK, FK → STATION.Station_ID)
-- Sen_Num (PK)
-- Sen_Type
-- Install_Date
+- STATION_ID (PK)
+- NAME
+- STATE
 
 ## WEATHER_VARIABLE
-- Variable_Code (PK)
-- Variable_Name
-- Unit
+- VAR_CODE (PK)
+- VAR_NAME
 
 ## OBSERVATION
-- Observation_ID (PK)
-- Station_ID (FK → STATION.Station_ID)
-- Variable_Code (FK → WEATHER_VARIABLE.Variable_Code)
-- Value
-- Observed_At
+- OBS_ID (PK)
+- STATION_ID (FK → STATION.STATION_ID)
+- OBS_DATE
+- VAR_CODE (FK → WEATHER_VARIABLE.VAR_CODE)
+- VALUE
