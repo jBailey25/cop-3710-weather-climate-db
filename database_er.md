@@ -10,4 +10,4 @@
     - Students and educators
 
 ## ER Diagram:
-![ER Diagram](diagram.png)
+![ER Diagram](new2_er_diagrampng.png)
