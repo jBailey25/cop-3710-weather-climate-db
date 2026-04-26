@@ -10,7 +10,7 @@ def load_local_data():
     if os.path.exists('data/stations.csv'):
         df_stations = pd.read_csv('data/stations.csv')
         df_stations.to_sql('STATION', conn, if_exists='replace', index=False)
-        print(f"✅ Stations loaded into SQLite.")
+        print(f" Stations loaded into SQLite.")
 
     # Load Observations from the data folder
     if os.path.exists('data/observations.csv'):
@@ -20,7 +20,15 @@ def load_local_data():
             df_obs.rename(columns={'date': 'OBS_DATE'}, inplace=True)
         
         df_obs.to_sql('OBSERVATION', conn, if_exists='replace', index=False)
-        print(f"✅ Observations loaded into SQLite.")
+        print(f" Observations loaded into SQLite.")
+
+        # Load Variables from the data folder
+    if os.path.exists('data/variables.csv'):
+        df_vars = pd.read_csv('data/variables.csv')
+
+        df_vars.to_sql('VARIABLES', conn, if_exists='replace', index=False)
+
+        print(" Variables loaded into SQLite.")
 
     conn.close()
 
