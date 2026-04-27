@@ -38,7 +38,7 @@ This project is a Weather Analytics Database designed to store, manage, and anal
      - View weather variable definitions
   
 # Application Preview
-
+![Weather App Preview](app_preview.png)
 
 ## Application Domain:
 This database supports weather analysis, stores weather data, analyzes it over time, and identifies patterns. 
