@@ -3,7 +3,7 @@
 ## Summary
 This project is a Weather Analytics Database designed to store, manage, and analyze large-scale weather data across different locations and dates. The system allows users to explore trends, compare regions, and identify extreme weather patterns using an interactive Streamlit application.
 
-# Final ER Diagram
+## Final ER Diagram
 
 ## STATION
 - STATION (PK)
@@ -37,7 +37,7 @@ This project is a Weather Analytics Database designed to store, manage, and anal
      - Compare average weather values across states
      - View weather variable definitions
   
-# Application Preview
+## Application Preview
 ![Weather App Preview](app_preview.png)
 
 ## Application Domain:
