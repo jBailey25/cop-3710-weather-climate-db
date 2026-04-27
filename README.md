@@ -6,7 +6,7 @@ This project is a Weather Analytics Database designed to store, manage, and anal
 ## Final ER Diagram
 
 ## STATION
-- STATION (PK)
+- STATION_ID (PK)
 - NAME
 - STATE
 
